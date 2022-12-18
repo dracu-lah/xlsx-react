@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { ExportToExcel } from "./ExcelFile";
 function App() {
   const [userData, setUserData] = useState([]);
@@ -7,13 +7,11 @@ function App() {
       .then((response) => response.json())
       .then((json) => {
         setUserData(json);
-        // console.log("json", json);
       });
   }, []);
-  
   return (
     <>
-      <ExportToExcel userDetail={userData} />
+      <ExportToExcel ud={userData} />
     </>
   );
 }
